@@ -1,12 +1,11 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+//import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import {useRef, useEffect} from 'react';
 import Portfolio from "./Portfolio";
-import SidePanel from "./SidePanel";
 import Light from "./Light";
-import Arrow from "./Arrow";
+import Sun from "./Sun";
 import './index.css'
+
 
 export default function MainSection(props) {
     console.log(props.greetUser)
@@ -24,6 +23,7 @@ export default function MainSection(props) {
 
     function mouseOver() {
         setMouse(function () {
+            
             return !moused
         })
     }
@@ -31,33 +31,36 @@ export default function MainSection(props) {
     return (
         <section className="section">
 
-            <div className="triangle" 
+            <div className="moon" 
             /* ref={ref} */ 
-            onClick={handleClicked}
-            onMouseOver={mouseOver}>
-                <div className="inner-tri"></div>
+            >
+                <div className="inner-moon"></div>
             </div>
 
             {/* <SidePanel /> */}
 
-            <p className={moused? "show" : "click"}>
-                <span className="clicks">Click me to view portfolio</span>
-            </p>
+            {/* <p className={moused? "show" : "click"}>
+                <span className="clicks">Click me to view portfolio</span>   Apologies. Clicking on any link and then returning to this page will cause a reload. This means you will have to type out your name again. Will surely fix this as I progress :)
+            </p> */}
 
-            <Arrow />
+            <Sun />
 
             <div className="main-page-content">
                 <h2>{props.greetUser}</h2>
                 <p>{props.engageUser}</p>
             </div>
 
+            <div 
+                className="arrow-down" 
+                onMouseOver={mouseOver}
+                onClick={handleClicked}
+            >
+            </div>
+            
+
             {/* <SidePanel /> */}
 
-            <BrowserRouter>
-                <Routes>
-                    <Route path="./furniture-store/furniture.html" element={<Portfolio darkMode = {isDark}/>}/>
-                </Routes>
-            </BrowserRouter>
+            <Portfolio showElement = {isDark}/>
             {/* <Portfolio darkMode = {isDark}/> */}
 
             <Light />

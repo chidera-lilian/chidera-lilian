@@ -4,6 +4,7 @@ import './index.css';
 import MainSection from './MainSection';
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 let userName;
 function doSomething() {
@@ -32,18 +33,19 @@ let greetingText;
         greeting = `Good Afternoon ${userName},`
         greetingText = `Welcome to my portfolio page`
     } 
-    else if (hour > 16 && hour <= 19) {
+    else if (hour >= 16 && hour < 21) {
         greeting = `Good Evening ${userName},`
         greetingText = `Welcome to my portfolio page`
     }
-    else if (hour >= 20 && hour <= 23 ) {
+    else if (hour >= 21 && hour <= 23 ) {
         greeting = `It's almost midnight!`
         greetingText = `You should go to bed soon ${userName}`
     } 
     else if (hour === 0 && hour <= 5 ) {
         greeting = `Why are you awake at this time ${userName}?`
     } 
-    console.log(greeting)
+    
+    
 
 root.render(
   <React.StrictMode>

@@ -51,6 +51,16 @@ export default function Light() {
                 <span className="odd-five"></span>
                 <span className="odd-five"></span>
                 <span className="odd-five"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
+                <span className="white-one"></span>
             </div>
     )
 }

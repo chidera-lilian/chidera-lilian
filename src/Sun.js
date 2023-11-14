@@ -1,10 +1,10 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 
-export default function Arrow(props) {
+export default function Sun(props) {
     return (
-        <div className="arrow" >
-            <div className="rectangle"></div>
+        <div className="sun" >
+            <div className="inner-sun"></div>
             {/* <div className="triangle"></div> */}
         </div>
     )
