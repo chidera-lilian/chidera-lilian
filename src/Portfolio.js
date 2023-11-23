@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import Light from "./Light";
 import ProjectsArray from "./ProjectsArray";
 //import { BrowserRouter, Route, Routes, NavLink} from 'react-router-dom';
 
@@ -19,12 +19,12 @@ export default function Portfolio(props) {
         )
     })
     return (
-        <section className={props.showElement ? "portfolio" : "top"}>
+        <section className='portfolio'>
             <h1>My Projects</h1>
             <div className="projects">
             {projects}
             </div>
-            
+            <Light />
         </section>
     )
 }
