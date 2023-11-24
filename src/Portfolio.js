@@ -24,7 +24,7 @@ export default function Portfolio(props) {
             <div className="projects">
             {projects}
             </div>
-            <Light />
+            {/* <Light /> */}
         </section>
     )
 }

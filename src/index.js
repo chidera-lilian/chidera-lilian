@@ -9,7 +9,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let userName;
+let userName=',';
 function doSomething() {
   var yourName = prompt("What is your name?");
   userName = yourName
@@ -27,7 +27,7 @@ let greeting;
 let greetingText;
     const d = new Date();
     let hour = d.getHours();
-    console.log(hour)
+    
     if (hour < 12) {
         greeting = `Good Morning ${userName},`
         greetingText = `Welcome to my portfolio page`
@@ -53,15 +53,16 @@ let greetingText;
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route element={<Header />}>
+      <Route element={<Header hour = {hour}/>}>
           <Route 
             path='/' 
             element={<Home 
               greetUser = {greeting}
               engageUser = {greetingText}
+              hour = {hour}
               />}
           />
-          <Route path='portfolio' element={<Portfolio />}/>
+          <Route path='portfolio' element={<Portfolio hour = {hour}/>}/>
 
       </Route>
     </Routes>

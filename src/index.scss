@@ -1,6 +1,10 @@
 :root {
-    --nighttime-black: #00040d;
-    --white: #ffffff;
+    --black1: #00040d;
+    --black2: #010912;
+    --black3: #1202397d;
+    --white1: #ffffff;
+    --white2: #eae3e3a7;
+    --brown: rgba(165, 42, 42, 0.525);
 }
 
 //    --facetsNeutralDark900: 6 11 16;
@@ -14,6 +18,7 @@
 //#FFFF00 - daytime-yellow, not too bad, can change the opacity
 //#fffd - another daytime-yellow, looks cooler than the first
 //#FA5F55 - sunset-orange
+//background-color: rgb(221, 168, 90);
 * {
     margin: 0;
     padding: 0;
@@ -33,12 +38,19 @@
     }
 }
 
+body {
+    height: 100vh;
+    position: relative;
+    overflow: hidden !important;
+}
 
     header {
         width: 100%;
         height: 10vh;
         display: grid;
         place-items: center;
+        z-index: 100;
+        box-shadow: -10px 1px 35px #FFFF00;
 
         nav {
             width: 80%;
@@ -49,34 +61,37 @@
 
             h4 {
                 font-size: 1.2rem;
-                color: white;
                 font-style: italic;
-                background-color: rgba(165, 42, 42, 0.525);
                 padding: .5rem;
+
+                a {
+                    color: white;
+                }
             }
 
             ul {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 40%;
+                width: 50%;
                 padding: 0 1rem;
 
                 li {
-                    color: white;
-                    background-color: rgba(165, 42, 42, 0.525);
                     padding: .5rem;
+                    a {
+                        color: var(--brown);
+                    }
                 }
             }
 
             .burger {
                 cursor: pointer;
-                //display: none;
+                display: none;
 
                 div {
                     width: 25px;
                     height: 3px;
-                    background-color: rgb(221, 168, 90);
+                    background-color: var(--brown);
                     margin: 5px;
                     transition: all 0.3s ease;
                 }
@@ -86,13 +101,12 @@
     }
 
     main {
-        background-color: var(--nighttime-black);
-        height: 100vh;
-        width: 100vw;
+        background-color: var(--black1);
+        height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
-        overflow: hidden;
-        position: relative;
+        
         
         .section {
             height: 90%;
@@ -113,12 +127,17 @@
                     font-style: italic;
                     font-size: 2rem;
                     display: flex;
-                    color: rgba(165, 42, 42, 0.525);
+                    color: var(--white2);
+                    margin: 0 0 3% 0;
+                }
+
+                .clock {
+                    color: var(--brown);
                 }
 
                 p {
                     font-style: italic;
-                    color: white;
+                    color: var(--white2);
                     margin: 3% 0 0 0;
                 }
             }
@@ -137,18 +156,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: var(--nighttime-black);
+            background-color: var(--black1);
             overflow: hidden;
 
             h1 {
                 text-align: center;
                 font-size: 1.5rem;
-                color: white;
+                color: var(--white1);
                 text-transform: uppercase;
                 font-style: italic;
                 letter-spacing: .2rem;
                 width: 100%;
-                margin: 2% 0 0 0;
+                margin: 5% 0 0 0;
             }
 
             .projects {
@@ -172,12 +191,13 @@
                     flex-direction: column;
                     justify-content: space-between;
                     border-radius: 3px;
-                    background-color: #12023946;
-                    border: 3px solid var(--nighttime-black);
-
+                    background-color: var(--black1);
+                    //border: inset 5px var(--black1);
+                    box-shadow: 1px 1px 3px var(--white2);
+                    
 
                     a {
-                        color: white;
+                        color: var(--white2);
                         font-size: 1.2rem;
                         margin: 15% 0 0 3%;
                         font-weight: bold;
@@ -185,7 +205,7 @@
                     }
 
                     a:hover {
-                        color: var(--nighttime-black);
+                        color: var(--black1);
                         background-color: #FFFF00;;
                         box-shadow: 0 0 0 1px #FFFF0044,
                             0 0 200px #FFFF00,
@@ -520,7 +540,7 @@
 //keyframes animations
 @keyframes animate-one {
     0%{
-        transform: scale(0);
+        //transform: scale(0);
     }
 
     30% {
@@ -528,7 +548,7 @@
         box-shadow: 0 0 0 10px #1906cc44,
         0 0 50px #1906cc,
         0 0 100px #1906cc;
-        transform: scale(0.4);
+        //transform: scale(0.4);
     }
 
     60% {
@@ -536,16 +556,16 @@
         box-shadow: 0 0 0 10px #49f82244,
         0 0 50px #49f822,
         0 0 100px #49f822;
-        transform: scale(0);
+        //transform: scale(0);
     }
 
     80% {
-        transform: scale(0.2) 
+        //transform: scale(0.2) 
     }
 
     100%{
         bottom: 110%;
-        transform: scale(0.2);
+        //transform: scale(0.2);
     }
 }
 
@@ -555,7 +575,7 @@
         transform: scale(0);
     }
     60% {
-        transform: scale(0.4);
+        transform: scale(0.2);
     }
 
     100% {
@@ -586,7 +606,7 @@
     }
 
     30% {
-        transform: scale(0.3);
+        transform: scale(0.2);
     }
 
     60% {
@@ -594,7 +614,7 @@
     }
 
     80% {
-        transform: scale(0.2) 
+        transform: scale(0.1) 
     }
 
     100%{
@@ -609,7 +629,7 @@
     }
 
     30% {
-        transform: scale(0.3);
+        transform: scale(0.2);
     }
 
     60% {
@@ -617,7 +637,7 @@
     }
 
     80% {
-        transform: scale(0.2) 
+        transform: scale(0.1) 
     }
 
     100%{
@@ -628,11 +648,72 @@
 
 }
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
+    body {
+        overflow: hidden !important;
+    }
     main {
-        background-color: pink; //works
+        overflow: hidden !important;
+
+        .portfolio {
+
+            h1 {
+                margin: 6% 0;
+                font-size: 1.3rem;
+                letter-spacing: unset;
+
+            }
+        }
     }
-    .burger {
-        display: block; //does nothing
+    header {
+        overflow: hidden !important;
+        position: relative;
+        nav {
+            overflow: hidden !important;
+            .burger {
+                display: block !important;
+            }
+
+            ul {
+                position: fixed;
+                top: 10vh;
+                width: 60%;
+                right: -100%;
+                height: 30%;
+                flex-direction: column;
+                justify-content: space-around;
+                transition: 2s ease-in-out;
+                background-color: var(--black2);
+
+                li {
+                    width: 80%;
+                    display: grid;
+                    place-items: center;
+                    transition: 2.5s ease-in-out;
+                    visibility: hidden;
+                    
+
+                    a {
+                        transition: 3s ease-in-out;
+                        opacity: 0;
+                        color: var(--white2);
+                    }
+                }
+
+            }
+
+            .show-nav {
+                right: 0;
+
+                li {
+                    visibility: visible;
+
+                    a{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
     }
-} */
+
+}

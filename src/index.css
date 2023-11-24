@@ -1,6 +1,10 @@
 :root {
-  --nighttime-black: #00040d;
-  --white: #ffffff;
+  --black1: #00040d;
+  --black2: #010912;
+  --black3: #1202397d;
+  --white1: #ffffff;
+  --white2: #eae3e3a7;
+  --brown: rgba(165, 42, 42, 0.525);
 }
 
 * {
@@ -19,11 +23,19 @@
   list-style: none;
 }
 
+body {
+  height: 100vh;
+  position: relative;
+  overflow: hidden !important;
+}
+
 header {
   width: 100%;
   height: 10vh;
   display: grid;
   place-items: center;
+  z-index: 100;
+  box-shadow: -10px 1px 35px #FFFF00;
 }
 header nav {
   width: 80%;
@@ -34,42 +46,43 @@ header nav {
 }
 header nav h4 {
   font-size: 1.2rem;
-  color: white;
   font-style: italic;
-  background-color: rgba(165, 42, 42, 0.525);
   padding: 0.5rem;
+}
+header nav h4 a {
+  color: white;
 }
 header nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 40%;
+  width: 50%;
   padding: 0 1rem;
 }
 header nav ul li {
-  color: white;
-  background-color: rgba(165, 42, 42, 0.525);
   padding: 0.5rem;
+}
+header nav ul li a {
+  color: var(--brown);
 }
 header nav .burger {
   cursor: pointer;
+  display: none;
 }
 header nav .burger div {
   width: 25px;
   height: 3px;
-  background-color: rgb(221, 168, 90);
+  background-color: var(--brown);
   margin: 5px;
   transition: all 0.3s ease;
 }
 
 main {
-  background-color: var(--nighttime-black);
-  height: 100vh;
-  width: 100vw;
+  background-color: var(--black1);
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  position: relative;
 }
 main .section {
   height: 90%;
@@ -90,11 +103,15 @@ main .section .main-page-content h2 {
   font-style: italic;
   font-size: 2rem;
   display: flex;
-  color: rgba(165, 42, 42, 0.525);
+  color: var(--white2);
+  margin: 0 0 3% 0;
+}
+main .section .main-page-content .clock {
+  color: var(--brown);
 }
 main .section .main-page-content p {
   font-style: italic;
-  color: white;
+  color: var(--white2);
   margin: 3% 0 0 0;
 }
 main .projects::-webkit-scrollbar, main .top::-webkit-scrollbar {
@@ -107,18 +124,18 @@ main .portfolio {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--nighttime-black);
+  background-color: var(--black1);
   overflow: hidden;
 }
 main .portfolio h1 {
   text-align: center;
   font-size: 1.5rem;
-  color: white;
+  color: var(--white1);
   text-transform: uppercase;
   font-style: italic;
   letter-spacing: 0.2rem;
   width: 100%;
-  margin: 2% 0 0 0;
+  margin: 5% 0 0 0;
 }
 main .portfolio .projects {
   width: 100%;
@@ -140,18 +157,18 @@ main .portfolio .projects .project {
   flex-direction: column;
   justify-content: space-between;
   border-radius: 3px;
-  background-color: rgba(18, 2, 57, 0.2745098039);
-  border: 3px solid var(--nighttime-black);
+  background-color: var(--black1);
+  box-shadow: 1px 1px 3px var(--white2);
 }
 main .portfolio .projects .project a {
-  color: white;
+  color: var(--white2);
   font-size: 1.2rem;
   margin: 15% 0 0 3%;
   font-weight: bold;
   width: 80%;
 }
 main .portfolio .projects .project a:hover {
-  color: var(--nighttime-black);
+  color: var(--black1);
   background-color: #FFFF00;
   box-shadow: 0 0 0 1px rgba(255, 255, 0, 0.2666666667), 0 0 200px #FFFF00, 0 0 200px #FFFF00;
 }
@@ -433,25 +450,16 @@ main .portfolio .projects .project p {
   bottom: 0%;
 }
 @keyframes animate-one {
-  0% {
-    transform: scale(0);
-  }
   30% {
     background: #1906cc;
     box-shadow: 0 0 0 10px rgba(25, 6, 204, 0.2666666667), 0 0 50px #1906cc, 0 0 100px #1906cc;
-    transform: scale(0.4);
   }
   60% {
     background: #49f822;
     box-shadow: 0 0 0 10px rgba(73, 248, 34, 0.2666666667), 0 0 50px #49f822, 0 0 100px #49f822;
-    transform: scale(0);
-  }
-  80% {
-    transform: scale(0.2);
   }
   100% {
     bottom: 110%;
-    transform: scale(0.2);
   }
 }
 @keyframes animate-two {
@@ -459,7 +467,7 @@ main .portfolio .projects .project p {
     transform: scale(0);
   }
   60% {
-    transform: scale(0.4);
+    transform: scale(0.2);
   }
   100% {
     transform: scale(0);
@@ -484,13 +492,13 @@ main .portfolio .projects .project p {
     transform: scale(0);
   }
   30% {
-    transform: scale(0.3);
+    transform: scale(0.2);
   }
   60% {
     transform: scale(0);
   }
   80% {
-    transform: scale(0.2);
+    transform: scale(0.1);
   }
   100% {
     bottom: 110%;
@@ -502,13 +510,13 @@ main .portfolio .projects .project p {
     transform: scale(0);
   }
   30% {
-    transform: scale(0.3);
+    transform: scale(0.2);
   }
   60% {
     transform: scale(0);
   }
   80% {
-    transform: scale(0.2);
+    transform: scale(0.1);
   }
   100% {
     bottom: 110%;
@@ -516,11 +524,58 @@ main .portfolio .projects .project p {
   }
 }
 
-/* @media screen and (max-width: 768px) {
-    main {
-        background-color: pink; //works
-    }
-    .burger {
-        display: block; //does nothing
-    }
-} *//*# sourceMappingURL=index.css.map */
+@media screen and (max-width: 600px) {
+  body {
+    overflow: hidden !important;
+  }
+  main {
+    overflow: hidden !important;
+  }
+  main .portfolio h1 {
+    margin: 6% 0;
+    font-size: 1.3rem;
+    letter-spacing: unset;
+  }
+  header {
+    overflow: hidden !important;
+    position: relative;
+  }
+  header nav {
+    overflow: hidden !important;
+  }
+  header nav .burger {
+    display: block !important;
+  }
+  header nav ul {
+    position: fixed;
+    top: 10vh;
+    width: 60%;
+    right: -100%;
+    height: 30%;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: 2s ease-in-out;
+    background-color: var(--black2);
+  }
+  header nav ul li {
+    width: 80%;
+    display: grid;
+    place-items: center;
+    transition: 2.5s ease-in-out;
+    visibility: hidden;
+  }
+  header nav ul li a {
+    transition: 3s ease-in-out;
+    opacity: 0;
+    color: var(--white2);
+  }
+  header nav .show-nav {
+    right: 0;
+  }
+  header nav .show-nav li {
+    visibility: visible;
+  }
+  header nav .show-nav li a {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=index.css.map */

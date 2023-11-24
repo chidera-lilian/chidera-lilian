@@ -40,36 +40,7 @@ export default [
         title: "Zikoko Clone(sort-of)",
         techstack: "HTML, CSS, JS"
     },
-    {
-        id: 6,
-        href: "https://liiilian.netlify.app/web-development-projects/zikoko/zikoko",
-        title: "Zikoko Clone(sort-of)",
-        techstack: "HTML, CSS, JS"
-    },
-    {
-        id: 6,
-        href: "https://liiilian.netlify.app/web-development-projects/zikoko/zikoko",
-        title: "Zikoko Clone(sort-of)",
-        techstack: "HTML, CSS, JS"
-    },
-    {
-        id: 6,
-        href: "https://liiilian.netlify.app/web-development-projects/zikoko/zikoko",
-        title: "Zikoko Clone(sort-of)",
-        techstack: "HTML, CSS, JS"
-    },
-    {
-        id: 6,
-        href: "https://liiilian.netlify.app/web-development-projects/zikoko/zikoko",
-        title: "Zikoko Clone(sort-of)",
-        techstack: "HTML, CSS, JS"
-    },
-    {
-        id: 6,
-        href: "https://liiilian.netlify.app/web-development-projects/zikoko/zikoko",
-        title: "Zikoko Clone(sort-of)",
-        techstack: "HTML, CSS, JS"
-    },
+    
 
     /* {
         id: 7,
