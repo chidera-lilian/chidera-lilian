@@ -25,7 +25,7 @@ export default function Home(props) {
                 <p>{props.engageUser}</p>
             </div>
 
-            {/* <Light /> */}
+            <Light />
         </section>
     )
 }
